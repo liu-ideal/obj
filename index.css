@@ -1,0 +1,53 @@
+.clearcollapse:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+body{
+  background-color: rgb(255, 255, 255);
+
+}
+header{
+  width: 960px;
+  height: 80px;
+  margin: 0 auto;
+  line-height: 80px;
+}
+header h1 {
+  width: 155px;
+  height: 100%;
+  float: left;
+  background: url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png)no-repeat 0 25px;
+}
+header h1 a{
+    font-size: 0px;
+}
+header input{
+  display: block;
+  float: left;
+  border: 1px solid #c3c3c3;
+  height: 35px;
+  width: 270px;
+  margin:21px 0 0 30px;
+}
+header nav{
+  float: right;
+  height: 100%;
+  margin-left: 35px;
+  line-height: 80px;
+}
+header nav a {
+  float: left;
+  display: block;
+  font-size: 0;
+  height: 25px;
+  width: 40px;
+  background: url(https://img3.doubanio.com/f/sns/8af21e61874a79a3728f00b0c45d36a794f53059/pics/sns/anony_home/anony_nav_logo.png)no-repeat;
+}
+header nav .nav_a_a{
+  background-position: 0 0;
+}
+header nav .nav_a_b{
+  background-position: 20px 0px;
+}
