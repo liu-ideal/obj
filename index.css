@@ -15,7 +15,10 @@
 .graycolor{
   color: #9b9b9b;
 }
-
+.imga{
+  display: block;
+}
+/* -------------------------------- */
 body{
   background-color: rgb(255, 255, 255);
   min-width: 960px;
@@ -302,9 +305,6 @@ a:hover{
 .hotcontent .left ul li img{
   display: block;
 }
-.imga{
-  display: block;
-}
 .hotcontent .left ul li span{
   color: #999;
 }
@@ -379,13 +379,36 @@ overflow: hidden;
   line-height: 1.2;
 }
 .doubantime li img{
+  display: block;
   width: 100px;
 }
 .doubantime li a{
+  position: relative;
   font-size: 13px;
   color: #333333;
 
 }
+.doubantime li .imga:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 35px;
+  background-color: #444;
+  opacity: 0.2;
+
+}
+.doubantime li .imga:after{
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 12px;
+  height: 12px;
+  background: url(https://img3.doubanio.com/f/sns/2842ce5ff147343f9d488659bc80958d1bfe56b5/pics/sns/time/ic_video_w@2x.png) no-repeat center/12px;
+}
+
 .doubantime li p{
   font-size: 12px;
   color: #999999;
@@ -394,6 +417,75 @@ overflow: hidden;
 text-align: center;
 }
 /* 豆瓣时间部分结束 */
+/* 豆瓣视频部分开始 -------------------*/
+.doubanvideo{
+  width: 960px;
+  margin: 40px auto;
+}
+.doubanvideo a{
+  color: #333333;
+  font-size: 13px;
+}
+.doubanvideo h2{
+  font-size: 24px;
+  color: #000;
+ display: inline-block;
+}
+.doubanvideo h3{
+  margin-left: 70px;
+  display: inline-block;
+}
+.doubanvideo h3  a{
+color: inherit;
+}
+.doubanvideo ul{
+  margin-top: 20px;
+}
+.doubanvideo li{
+  width: 250px;
+  float: left;
+  margin-left: 33px;
+}
+.doubanvideo li:first-child{
+  margin-left: 118px;
+}
+.doubanvideo li .imga{
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+.doubanvideo li .imga:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #444;
+  opacity: 0.2;
+
+
+}
+.doubanvideo li .imga:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(https://img3.doubanio.com/f/sns/3d0f5696311e4db481af371ffb241da225cf26d8/pics/sns/anony_home/play.png) center/18px no-repeat;
+}
+.doubanvideo li .imga img{
+  display: block;
+  width: 100%;
+}
+.doubanvideo .gyhkt{
+  margin-top: 33px;
+  margin-left: 118px;
+}
+
+/* 豆瓣视频部分结束 ----------------------------*/
 .test{
   line-height: 50px;
 }
