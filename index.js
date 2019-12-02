@@ -1,8 +1,8 @@
 var str="<p>nihao(this.name) how are you</p>";
-var data={name:'xiaoliu'};
-new View(str,data);
+var data={name:1};
+var vue=new View(str,data);
 function View(str,data){
-  this.render=function (str,data){
+  this.render=function (str){
     var hasEndTag;
     var tagName;
     var tagContent;
@@ -23,12 +23,72 @@ function View(str,data){
     var regThree=/\(.*\)/;
     varVal=regThree.exec(tagContent)[0].replace(/[()]/g,'');
     native=tagContent.replace(varVal,'');
-    body=document.body;
+    body=document.getElementById("root");
+    body.innerHTML='';
     ele=document.createElement(tagName);
     ele.innerHTML= tagContent.replace(/\(.*\)/,eval(varVal));
     body.appendChild(ele);
   }
-  this[Object.keys(data)[0]]=data[Object.keys(data)[0]];
-  this.render(str,data)
+  Object.defineProperty(this,Object.keys(data)[0],{
+    get(){
+      return data[Object.keys(data)[0]];
+    },
+    set(val){
+      data[Object.keys(data)[0]]=val;
+      this.render(str);
+    }
+  })
+  this.changeData=function(){
+    console.log(this);
+    this[Object.keys(data)[0]]+=1;
+  };
+  document.getElementById("app").onclick=this.changeData.bind(this);
+  this.render(str);
   //Object.keys(data);
 }
+
+function defineReactive(data, key, value) {
+  //递归调用，监听所有属性
+  observer(value);
+  var dep = new Dep();
+  Object.defineProperty(data, key, {
+    get: function () {
+      if (Dep.target) {
+        dep.addSub(Dep.target);
+      }
+      return value;
+    },
+    set: function (newVal) {
+      if (value !== newVal) {
+        value = newVal;
+        dep.notify(); //通知订阅器
+      }
+    }
+  });
+}
+
+function observer(data) {
+  if (!data || typeof data !== "object") {
+    return;
+  }
+  Object.keys(data).forEach(key => {
+    defineReactive(data, key, data[key]);
+  });
+}
+
+function Dep() {
+  this.subs = [];
+}
+Dep.prototype.addSub = function (sub) {
+  this.subs.push(sub);
+}
+Dep.prototype.notify = function () {
+  console.log('属性变化通知 Watcher 执行更新视图函数');
+  this.subs.forEach(sub => {
+    sub.update();
+  })
+}
+Dep.target = null;
+var mydata={ll:15,jj:18};
+observer(mydata);
+
