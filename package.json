@@ -1,0 +1,23 @@
+{
+  "name": "obj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node_get_data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liu-ideal/obj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liu-ideal/obj/issues"
+  },
+  "homepage": "https://github.com/liu-ideal/obj#readme",
+  "devDependencies": {
+    "jsdom": "^15.2.1"
+  }
+}
