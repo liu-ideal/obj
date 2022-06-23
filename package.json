@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/liu-ideal/obj#readme",
   "devDependencies": {
-    "jsdom": "^15.2.1"
+    "jsdom": "^16.5.0"
   }
 }
